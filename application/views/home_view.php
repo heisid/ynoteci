@@ -12,7 +12,7 @@ foreach ($recent_post as $post) {
             <h3>{$post['title_post']}</h3>
             <p><em>{$post['date_post']}</em><p>
             <p>{$post['content']}</p>
-            <a href="index.php/readpost/{$post['id_post']}" class="btn btn-primary">Read More</a>
+            <a href="index.php/read_post/{$post['id_post']}" class="btn btn-primary">Read More</a>
         </div>
     </div>
 EOD;

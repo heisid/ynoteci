@@ -25,11 +25,11 @@ class Post_model extends CI_Model {
         }
         // mengantisipasi kalau2 $post dipake lagi nanti
         unset($post);
-        
+
         return $result;
     }
 
-    public function show_post($id_post) {
+    public function get_single_post($id_post) {
         $this->db->where('id_post', $id_post);
         $query = $this->db->get('posts');
         return $query->result_array();
