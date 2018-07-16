@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         $recent_posts = $post->get_recent_posts();
 
         $this->load->view('header_view', array('page_title' => 'YNOTE'));
+        $this->load->view('navbar_view');
         $this->load->view('home_view', array('recent_post' => $recent_posts));
         $this->load->view('tail_view');
     }
