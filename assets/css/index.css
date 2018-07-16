@@ -1,0 +1,10 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+    font-family: 'Open Sans', Courier, monospace;
+}
+
+.post-showcase {
+  margin-bottom: 20px;
+}
