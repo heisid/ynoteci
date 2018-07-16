@@ -32,6 +32,14 @@ class Post_model extends CI_Model {
     public function get_single_post($id_post) {
         $this->db->where('id_post', $id_post);
         $query = $this->db->get('posts');
+        return $query->row_array();
+    }
+
+    public function get_tags_by_id($id_post) {
+        $this->db->from('tags')
+                 ->join('posts', 'posts.id_post = tags.id_post')
+                 ->where('posts.id_post', $id_post);
+        $query = $this->db->get();
         return $query->result_array();
     }
 }
