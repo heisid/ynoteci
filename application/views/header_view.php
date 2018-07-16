@@ -7,18 +7,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo assets_url(); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo assets_url(); ?>css/bootstrap.min.css">
     <!-- OpenSans font -->
-    <link rel="stylesheet" href="<?php echo assets_url(); ?>/css/OpenSans.css">
+    <link rel="stylesheet" href="<?php echo assets_url(); ?>css/OpenSans.css">
     <?php 
         if(isset($style)) {
-            echo "<link rel='stylesheet' href='".assets_url()."/css/".$style."'>";
+            echo "<link rel='stylesheet' href='".assets_url()."css/".$style."'>";
         } else {
-            echo "<link rel='stylesheet' href='".assets_url()."/css/index.css'>";
+            echo "<link rel='stylesheet' href='".assets_url()."css/index.css'>";
         }
     ?>
     <!-- jQuery -->
-    <script src="<?php echo assets_url(); ?>/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="<?php echo assets_url(); ?>js/jquery-3.3.1.slim.min.js"></script>
     <title>
         <?php echo $page_title ?>
     </title>
