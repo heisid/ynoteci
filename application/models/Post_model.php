@@ -42,4 +42,11 @@ class Post_model extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function get_list_all_post() {
+        $this->db->select('id_post, title_post, date_post')
+                ->order_by('date_post', 'DESC');
+        $query = $this->db->get('posts');
+        return $query->result_array();
+    }
 }
