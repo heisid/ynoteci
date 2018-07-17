@@ -15,6 +15,7 @@ class Post_model extends CI_Model {
         $result = $query->result_array();
 
         // Motong sampe 500 karakter
+        // TODO: diganti pake helper text dari CI
         foreach ($result as &$post) {
             $content_no_html = strip_tags($post['content']);
             $content_crop = substr($content_no_html, 0, 500);
