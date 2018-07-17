@@ -9,7 +9,7 @@ class Archive extends CI_Controller {
 
         $this->load->view('header_view', array('page_title' => 'YNOTE'));
         $this->load->view('navbar_view');
-        $this->load->view('archive_view', array('recent_post' => $list_all_posts));
+        $this->load->view('archive_view', array('list_all_posts' => $list_all_posts));
         $this->load->view('tail_view');
     }
 }

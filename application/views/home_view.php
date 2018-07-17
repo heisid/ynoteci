@@ -17,3 +17,4 @@ foreach ($recent_post as $post) {
     </div>
 EOD;
 }
+echo "</div>";
