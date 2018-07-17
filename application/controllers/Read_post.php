@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Post extends CI_Controller {
+class Read_post extends CI_Controller {
     // http://saeedpourali.com/codeigniter-passing-parameters-to-controller-index/
     public function _remap($method, $args) {
         if (method_exists($this, $method)) {

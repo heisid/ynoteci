@@ -20,7 +20,7 @@
         <a class="nav-link" href="<?php echo base_url(); ?>index.php/tags">Tags</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>index.php/posting">New Post</a>
+        <a class="nav-link" href="<?php echo base_url(); ?>index.php/posting/new_post">New Post</a>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0" action="search" method="get">
