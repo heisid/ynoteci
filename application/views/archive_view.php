@@ -1,16 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+echo "<div class='container'>";
 echo "<h2>Archive</h2>";
 
 foreach ($list_all_posts as $post) {
     echo <<<EOD
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-4">
             <em>{$post['date_post']}</em>
         </div>
-        <div class="col-md-10">
-            <a href=""index.php/read_post/{$post['id_post']}"">{$post['title_post']}</a>
+        <div class="col-md-8">
+            <a href="read_post/{$post['id_post']}">{$post['title_post']}</a>
         </div>
     </div>
 EOD;
 }
+
+echo "</div?";
