@@ -17,6 +17,7 @@
             echo "<link rel='stylesheet' href='".assets_url()."css/index.css'>";
         }
     ?>
+    <link rel="stylesheet" href="<?php echo assets_url(); ?>css/footer.css">
     <!-- jQuery -->
     <script src="<?php echo assets_url(); ?>js/jquery-3.3.1.slim.min.js"></script>
     <title>

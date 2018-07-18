@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 2px;
+}
+
+.footer p a {
+    color: lightblue;
+}
