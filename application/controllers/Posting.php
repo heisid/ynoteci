@@ -7,10 +7,6 @@ class Posting extends CI_Controller {
         $this->load->view('navbar_view');
         $this->load->view('newpost_view');
         $this->load->view('tail_view');
-        $post_data = $this->input->post('post-submit');
-
-        $this->load->model('Post_model');
-        $post = $this->Post_model;
     }
 
     public function edit($id_post) {
