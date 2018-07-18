@@ -19,4 +19,15 @@ class Posting extends CI_Controller {
         $this->load->view('edit_view');
         $this->load->view('tail_view');
     }
+
+    public function save_post() {
+        $post_data = $this->input->post();
+
+        $this->load->model('Post_model');
+        $post = $this->Post_model;
+        // print_r($post_data);
+        $post->save_post($post_data);
+        redirect('home', 'refresh');
+    }
+
 }

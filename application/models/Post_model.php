@@ -55,4 +55,11 @@ class Post_model extends CI_Model {
         $this->db->where('id_post', $id_post)
                  ->delete('posts');
     }
+
+    public function save_post($post_data) {
+        $title_post = $post_data['title_post'];
+        $content = $post_data['content'];
+        $tags = explode(',', $post_data['tags']);
+    }
+
 }

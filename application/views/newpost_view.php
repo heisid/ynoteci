@@ -3,14 +3,14 @@
 <script src="<?php echo assets_url(); ?>js/ckeditor/ckeditor.js"></script>
 
 <h3>New Post</h3>
-<form action="posting/newpost" method="post">
+<form action="save_post" method="post">
     <div class="form-group">
         <label for="post-title">Title</label>
-        <input name="post-title" class="form-control form-control-lg" id="post-title" type="text">
+        <input name="title_post" class="form-control form-control-lg" id="post-title" type="text">
     </div>
     <div class="form-group">
         <label for="post-content">Content</label>
-        <textarea name="post-content" id="post-content"></textarea>
+        <textarea name="content" id="post-content"></textarea>
         <script>
             $(document).ready(function() {
                 CKEDITOR.replace("post-content");

@@ -90,7 +90,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 // this utility helper, look at https://stackoverflow.com/questions/6630770/where-do-i-put-image-files-css-js-etc-in-codeigniter
-$autoload['helper'] = array('url', 'utility');
+$autoload['helper'] = array('url', 'utility', 'form');
 
 /*
 | -------------------------------------------------------------------
