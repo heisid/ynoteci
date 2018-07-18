@@ -27,7 +27,7 @@ class Posting extends CI_Controller {
         $post = $this->Post_model;
         // print_r($post_data);
         $post->save_post($post_data);
-        redirect('home', 'refresh');
+        redirect(base_url(), 'refresh');
     }
 
 }

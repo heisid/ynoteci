@@ -59,9 +59,10 @@ class Post_model extends CI_Model {
     private function save_tags($id_post, $tags) {
         $tags = explode(',', $tags);
         foreach($tags as $tag) {
+            $this->db->set('id_post', $id_post);
             $this->db->set('tag', $tag);
+            $this->db->insert('tags');
         }
-        $this->db->insert('tags');
     }
 
     public function save_post($post_data) {
