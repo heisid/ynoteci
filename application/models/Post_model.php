@@ -56,10 +56,25 @@ class Post_model extends CI_Model {
                  ->delete('posts');
     }
 
+    private function save_tags($id_post, $tags) {
+        $tags = explode(',', $tags);
+        foreach($tags as $tag) {
+            $this->db->set('tag', $tag);
+        }
+        $this->db->insert('tags');
+    }
+
     public function save_post($post_data) {
-        $title_post = $post_data['title_post'];
-        $content = $post_data['content'];
+        $this->db->set('title_post', $post_data['title_post']);
+        $this->db->set('content', $post_data['content']);
+        $this->db->set('date_post', 'NOW()', FALSE);
+        $this->db->insert('posts');
+        // last autoincrement integer
+        $id_post = $this->db->insert_id();
+
         $tags = explode(',', $post_data['tags']);
+        $this->save_tags($id_post, $post_data['tags']);
+        
     }
 
 }
