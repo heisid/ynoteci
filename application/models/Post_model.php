@@ -79,7 +79,18 @@ class Post_model extends CI_Model {
     }
 
     public function get_list_all_tags() {
+        $this->db->select('tag')
+                 ->distinct();
         $query = $this->db->get('tags');
+        return $query->result_array();
+    }
+
+    public function posts_by_tag($tag) {
+        $this->db->select('tags.id_post AS id_post, posts.title_post AS title_post')
+                 ->from('tags')
+                 ->join('posts', 'posts.id_post = tags.id_post')
+                 ->where('tags.tag', $tag);
+        $query = $this->db->get();
         return $query->result_array();
     }
 
