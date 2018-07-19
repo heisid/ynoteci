@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Tags:
 <?php
 foreach($tags as $tag) {
-    echo "<a href='#'>".$tag['tag']." </a>";
+    echo "<a href='".base_url()."index.php/tags/by_tag/".$tag['tag']."'>".$tag['tag']." </a>";
 }
 ?>
 </p>
