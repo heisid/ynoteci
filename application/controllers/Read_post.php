@@ -13,7 +13,6 @@ class Read_post extends CI_Controller {
 
     public function index($id_post) {
         // Loading data from model
-        $this->load->model('Post_model');
         $posts = $this->Post_model;
         $full_post = $posts->get_single_post($id_post);
         $tags = $posts->get_tags_by_id($id_post);

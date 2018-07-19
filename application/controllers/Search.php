@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Search extends CI_Controller {
     public function index() {
-        $this->load->model('Post_model');
         $post = $this->Post_model;
 
         $search_string = $this->input->post('search');

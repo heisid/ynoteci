@@ -10,7 +10,6 @@ class Posting extends CI_Controller {
     }
 
     public function edit_post($id_post) {
-        $this->load->model('Post_model');
         $post = $this->Post_model;
         $post_data = $post->get_single_post($id_post);
         $tags = $post->get_tags_by_id($id_post);
@@ -30,7 +29,6 @@ class Posting extends CI_Controller {
     public function save_post() {
         $post_data = $this->input->post();
 
-        $this->load->model('Post_model');
         $post = $this->Post_model;
         if (empty($post_data['id_post'])) {
             $post->save_post($post_data);

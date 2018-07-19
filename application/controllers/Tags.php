@@ -2,7 +2,6 @@
 
 class Tags extends CI_Controller {
     public function index() {
-        $this->load->model('Post_model');
         $model = $this->Post_model;
         $tags = $model->get_list_all_tags();
 
@@ -13,7 +12,6 @@ class Tags extends CI_Controller {
     }
 
     public function by_tag($tag) {
-        $this->load->model('Post_model');
         $posts = $this->Post_model;
         $posts_list = $posts->posts_by_tag($tag);
 
