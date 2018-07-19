@@ -4,6 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <h1><?php echo $full_post['title_post']; ?></h1>
 <p><em><?php echo $full_post['date_post']; ?></em></p>
+<?php
+    if (!empty($full_post['date_modified'])) {
+        echo "<p><em>(Last Modified ". $full_post['date_modified'] .")</em></p>";
+    }
+?>
+
 <p>Tags:
 <?php
 foreach($tags as $tag) {
