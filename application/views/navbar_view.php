@@ -26,7 +26,7 @@
         <a class="nav-link" href="<?php echo base_url(); ?>index.php/about">About</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" action="search" method="get">
+    <form class="form-inline mt-2 mt-md-0" action="<?php echo base_url(); ?>index.php/search" method="get">
       <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
