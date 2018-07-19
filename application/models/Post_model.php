@@ -7,8 +7,6 @@ class Post_model extends CI_Model {
     }
 
     public function get_recent_posts() {
-        // this select query doesn't work. why???
-        //$this->db->select('title_post', 'date_post', 'content')
         $this->db->limit(5)
                  ->order_by('date_post', 'DESC');
         $query = $this->db->get('posts');
@@ -37,7 +35,8 @@ class Post_model extends CI_Model {
     }
 
     public function get_tags_by_id($id_post) {
-        $this->db->from('tags')
+        $this->db->select('tags.tag AS tag')
+                 ->from('tags')
                  ->join('posts', 'posts.id_post = tags.id_post')
                  ->where('posts.id_post', $id_post);
         $query = $this->db->get();

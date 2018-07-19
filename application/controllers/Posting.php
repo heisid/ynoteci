@@ -13,10 +13,17 @@ class Posting extends CI_Controller {
         $this->load->model('Post_model');
         $post = $this->Post_model;
         $post_data = $post->get_single_post($id_post);
+        $tags = $post->get_tags_by_id($id_post);
+
+        $tags_array = array();
+        foreach ($tags as $t) {
+            $tags_array[] = $t['tag'];
+        }
+        $tags_string = implode(",", $tags_array);
         
         $this->load->view('header_view', array('page_title' => $post_data['title_post'], 'style' => 'posting.css'));
         $this->load->view('navbar_view');
-        $this->load->view('edit_view', $post_data);
+        $this->load->view('edit_view', array('post_data' => $post_data, 'tags_string' => $tags_string));
         $this->load->view('tail_view');
     }
 
