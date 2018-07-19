@@ -111,7 +111,10 @@ class Post_model extends CI_Model {
     }
 
     public function search_post($search_string) {
-        
+        $this->db->like('content', $search_string)
+                 ->or_like('title_post', $search_string);
+        $query = $this->db->get('posts');
+        return $query->result_array();
     }
 
 }
