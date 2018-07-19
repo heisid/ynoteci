@@ -32,9 +32,11 @@ class Posting extends CI_Controller {
 
         $this->load->model('Post_model');
         $post = $this->Post_model;
-        // print_r($post_data);
-        $post->save_post($post_data);
+        if (empty($post_data['id_post'])) {
+            $post->save_post($post_data);
+        } else {
+            $post->update_post($post_data);
+        }
         redirect(base_url(), 'refresh');
     }
-
 }

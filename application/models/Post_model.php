@@ -64,17 +64,34 @@ class Post_model extends CI_Model {
         }
     }
 
+    private function delete_tags($id_post) {
+        $this->db->where('id_post', $id_post)
+                 ->delete('tags');
+    }
+
     public function save_post($post_data) {
         $this->db->set('title_post', $post_data['title_post']);
         $this->db->set('content', $post_data['content']);
         $this->db->set('date_post', 'NOW()', FALSE);
+
         $this->db->insert('posts');
         // last autoincrement integer
         $id_post = $this->db->insert_id();
 
-        $tags = explode(',', $post_data['tags']);
         $this->save_tags($id_post, $post_data['tags']);
+    }
+
+    public function update_post($post_data) {
+        $this->delete_tags($post_data['id_post']);
+    
+        $this->db->set('title_post', $post_data['title_post']);
+        $this->db->set('content', $post_data['content']);
+        $this->db->set('date_modified', 'NOW()', FALSE);
+        $this->db->where('id_post', $post_data['id_post']);
+        $this->db->update('posts');
         
+        $this->save_tags($post_data['id_post'], $post_data['tags']);
+
     }
 
     public function get_list_all_tags() {
