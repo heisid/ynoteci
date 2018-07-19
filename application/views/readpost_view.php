@@ -22,7 +22,7 @@ foreach($tags as $tag) {
 
 <?php echo $full_post['content']; ?>
 
-<a href="<?php echo base_url(); ?>posting/edit/<?php echo $full_post['id_post']; ?>" class="btn btn-primary">Edit</a>
+<a href="<?php echo base_url(); ?>posting/edit_post/<?php echo $full_post['id_post']; ?>" class="btn btn-primary">Edit</a>
 <form class="form-delete" action="<?php echo base_url(); ?>index.php/delete" method="post">
     <button id="delete" class="btn btn-danger" type="submit" name="id_post" value="<?php echo $full_post['id_post']; ?>">Delete</button>
 </form>

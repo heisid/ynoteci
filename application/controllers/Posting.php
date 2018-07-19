@@ -9,14 +9,14 @@ class Posting extends CI_Controller {
         $this->load->view('tail_view');
     }
 
-    public function edit($id_post) {
+    public function edit_post($id_post) {
         $this->load->model('Post_model');
         $post = $this->Post_model;
         $post_data = $post->get_single_post($id_post);
         
         $this->load->view('header_view', array('page_title' => $post_data['title_post'], 'style' => 'posting.css'));
         $this->load->view('navbar_view');
-        $this->load->view('edit_view');
+        $this->load->view('edit_view', $post_data);
         $this->load->view('tail_view');
     }
 
