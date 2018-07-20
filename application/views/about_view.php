@@ -14,8 +14,7 @@
 
 <h3>Backstory</h3>
 <p>Initially, Y-Note was made for devschool. But it turned out this thing is quite fun.</p>
-<p>The name itself consists of "Y" and "note". "Y" is taken from my real name of how I'm called at home and devschool.
-And it can be pronounced as "why not?", which I think is quite cool.</p>
+<p>The name itself consists of "Y" and "note". "Y" is taken from my real name. And it can be pronounced as "why not?", which I think is cool.</p>
 
 <h3>Code</h3>
 <p>The code is on github, <a href="https://github.com/heisid/ynoteci" target="_blank">https://github.com/heisid/ynoteci</a>. For professional programmer out there, please don't laugh.
