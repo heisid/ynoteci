@@ -90,7 +90,7 @@ class Post_model extends CI_Model {
         $this->db->where('id_post', $post_data['id_post']);
         $this->db->update('posts');
         
-        // another way set two database: using flush_cache(), rather than
+        // another way set two table: using flush_cache(), rather than
         // making a new function (so fucking stupid)
         // $this->db->flush_cache();
         
