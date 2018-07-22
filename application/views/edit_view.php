@@ -3,7 +3,7 @@
 <script src="<?php echo assets_url(); ?>js/ckeditor/ckeditor.js"></script>
 
 <h3>Edit Post</h3>
-<form action="<?php echo site_url(); ?>/posting/save_post" method="post">
+<form action="<?php echo site_url('posting/save_post'); ?>" method="post">
     <input type="hidden" name="id_post" value="<?php echo $post_data['id_post']; ?>">
     <div class="form-group">
         <label for="post-title">Title</label>

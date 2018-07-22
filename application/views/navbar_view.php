@@ -14,19 +14,19 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url(); ?>/archive">Archive</a>
+        <a class="nav-link" href="<?php echo site_url('archive'); ?>">Archive</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url(); ?>/tags">Tags</a>
+        <a class="nav-link" href="<?php echo site_url('tags'); ?>">Tags</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url(); ?>/posting/new_post">New Post</a>
+        <a class="nav-link" href="<?php echo site_url('posting/new_post'); ?>">New Post</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url(); ?>/about">About</a>
+        <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" action="<?php echo site_url(); ?>/search" method="get">
+    <form class="form-inline mt-2 mt-md-0" action="<?php echo site_url('search'); ?>" method="get">
       <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
