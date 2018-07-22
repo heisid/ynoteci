@@ -35,6 +35,6 @@ class Posting extends CI_Controller {
         } else {
             $post->update_post($post_data);
         }
-        redirect(base_url(), 'refresh');
+        redirect(site_url(), 'refresh');
     }
 }

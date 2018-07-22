@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Tags:
 <?php
 foreach($tags as $tag) {
-    echo "<a href='".base_url()."index.php/tags/by_tag/".$tag['tag']."'>".$tag['tag']." </a>";
+    echo "<a href='".site_url()."tags/by_tag/".$tag['tag']."'>".$tag['tag']." </a>";
 }
 ?>
 </p>
@@ -22,8 +22,8 @@ foreach($tags as $tag) {
 
 <?php echo $full_post['content']; ?>
 
-<a href="<?php echo base_url(); ?>index.php/posting/edit_post/<?php echo $full_post['id_post']; ?>" class="btn btn-primary">Edit</a>
-<form class="form-delete" action="<?php echo base_url(); ?>index.php/delete" method="post">
+<a href="<?php echo site_url(); ?>posting/edit_post/<?php echo $full_post['id_post']; ?>" class="btn btn-primary">Edit</a>
+<form class="form-delete" action="<?php echo site_url(); ?>delete" method="post">
     <button id="delete" class="btn btn-danger" type="submit" name="id_post" value="<?php echo $full_post['id_post']; ?>">Delete</button>
 </form>
 

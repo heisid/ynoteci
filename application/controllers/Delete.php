@@ -6,6 +6,6 @@ class Delete extends CI_Controller {
         $id_post = $this->input->post();
         $post = $this->Post_model;
         $post->delete_post($id_post['id_post']);
-        redirect(base_url(), 'refresh');
+        redirect(site_url(), 'refresh');
     }
 }
