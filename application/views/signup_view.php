@@ -6,11 +6,11 @@
         <h2>Sign Up</h2>
         <hr>
         <?php
-            if ($this->session->flashdata()) {
-                foreach ($this->session->flashdata('error_msg') as $error_msg) {
-                    echo "<p><span style='color:red'>" . $error_msg . "</span></p>";
-                }
+        if ($this->session->flashdata()) {
+            foreach ($this->session->flashdata('error_msg') as $error_msg) {
+                echo "<p><span style='color:red'>" . $error_msg . "</span></p>";
             }
+        }
         ?>
         <form action="<?php echo site_url('signup/add_user'); ?>" method="post">
             <div class="form-group">

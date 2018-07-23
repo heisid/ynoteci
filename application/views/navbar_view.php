@@ -24,18 +24,18 @@
       </li>
       <li class="nav-item">
         <?php
-          if ($this->session->userdata('logged_in')) {
-            echo "<a class='nav-link' href='" . site_url('posting/new_post'). "'>New Post</a>";
-          }
+        if ($this->session->userdata('logged_in')) {
+          echo "<a class='nav-link' href='" . site_url('posting/new_post'). "'>New Post</a>";
+        }
         ?>
       </li>
       <li class="nav-item">
         <?php
-          if ($this->session->userdata('username')) {
-            echo "<a class='nav-link' href='" . site_url('logout') . "'>Logout</a>";
-          } else {
-            echo "<a class='nav-link' href='" . site_url('login') . "'>Login</a>";
-          }
+        if ($this->session->userdata('username')) {
+          echo "<a class='nav-link' href='" . site_url('logout') . "'>Logout</a>";
+        } else {
+          echo "<a class='nav-link' href='" . site_url('login') . "'>Login</a>";
+        }
         ?>
       </li>
     </ul>

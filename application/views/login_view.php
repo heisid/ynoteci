@@ -5,9 +5,11 @@
     <div class="col-md-6">
         <h2>Login</h2>
         <hr>
+
         <?php
-            echo "<p><span style='color:red'>". $this->session->flashdata('login_failed') . "</span></p>";
+        echo "<p><span style='color:red'>". $this->session->flashdata('login_failed') . "</span></p>";
         ?>
+        
         <form action="<?php echo site_url('login/verify'); ?>" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
