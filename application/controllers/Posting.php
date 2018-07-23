@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Posting extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
+        if (empty($this->session->userdata('logged_in'))) {
+            redirect(site_url());
+        }
+    }
+
     public function new_post() {
         $this->load->view('header_view', array('page_title'=>'New Post', 'style' => 'posting.css'));
         $this->load->view('navbar_view');
@@ -11,6 +18,13 @@ class Posting extends CI_Controller {
 
     public function edit_post($id_post) {
         $post = $this->Post_model;
+
+        if (!$post->post_permission($id_post)) {
+            $read_link = 'read_post/'.$id_post;
+            $this->session->set_flashdata('permission', 'You are not allowed to edit this post');
+            redirect(site_url($read_link));
+        }
+
         $post_data = $post->get_single_post($id_post);
         $tags = $post->get_tags_by_id($id_post);
 

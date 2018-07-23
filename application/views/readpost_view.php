@@ -1,4 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
+echo "<span style='color:red;'>".$permission_msg."</span>";
+?>
 
 <h1><?php echo $full_post['title_post']; ?></h1>
 <p><em><?php echo $full_post['date_post']; ?></em></p>
