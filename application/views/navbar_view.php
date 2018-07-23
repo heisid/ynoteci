@@ -31,7 +31,14 @@
       </li>
       <li class="nav-item">
         <?php
-        if ($this->session->userdata('username')) {
+        if ($this->session->userdata('logged_in')) {
+          echo "<span class='navbar-text'>(". $this->session->userdata('username') .")</span>";
+        }
+        ?>
+      </li>
+      <li class="nav-item">
+        <?php
+        if ($this->session->userdata('logged_in')) {
           echo "<a class='nav-link' href='" . site_url('logout') . "'>Logout</a>";
         } else {
           echo "<a class='nav-link' href='" . site_url('login') . "'>Login</a>";
