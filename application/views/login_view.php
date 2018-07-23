@@ -1,15 +1,28 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<form class="form-signin">
-<h2 class="form-signin-heading">Please sign in</h2>
-<label for="inputEmail" class="sr-only">Email address</label>
-<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-<label for="inputPassword" class="sr-only">Password</label>
-<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-<div class="checkbox">
-    <label>
-    <input type="checkbox" value="remember-me"> Remember me
-    </label>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h2>Login</h2>
+        <hr>
+        <?php
+            echo "<p><span style='color:red'>". $this->session->flashdata('login_failed') . "</span></p>";
+        ?>
+        <form action="<?php echo site_url('login/verify'); ?>" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username"
+                    <?php echo "value={$this->session->flashdata('username')}"; ?> >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password"
+                    <?php echo "value={$this->session->flashdata('password')}"; ?> >
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <hr>
+        <p>Or <a href="<?php echo site_url('signup'); ?>">Sign Up</a></p>
+    </div>
+    <div class="col-md-3"></div>
 </div>
-<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>

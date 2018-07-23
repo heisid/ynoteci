@@ -35,6 +35,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <hr>
+        <p>Or <a href="<?php echo site_url('login'); ?>">Login</a></p>
     </div>
     <div class="col-md-3"></div>
 </div>

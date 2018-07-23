@@ -25,6 +25,15 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
       </li>
+      <li class="nav-item">
+        <?php
+          if ($this->session->userdata('username')) {
+            echo "<a class='nav-link' href='" . site_url('logout') . "'>Logout</a>";
+          } else {
+            echo "<a class='nav-link' href='" . site_url('login') . "'>Login</a>";
+          }
+        ?>
+      </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0" action="<?php echo site_url('search'); ?>" method="get">
       <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">

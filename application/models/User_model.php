@@ -42,4 +42,18 @@ class User_model extends CI_Model {
         }
     }
 
+    public function get_user_detail() {
+        $this->load->library('user_agent');
+        if (!$this->session->userdata('logged_in')) {
+            $this->session->set_flashdata('user_detail_error', 'You are not logged in');
+            // Throw back to the caller script
+            redirect($this->agent->referer());
+        } else {
+            $this->db->where('username', $this->session->userdata('username'));
+            $query = $this->db->get('users');
+        }
+
+        return $query->result_array();
+    }
+
 }
