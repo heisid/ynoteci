@@ -20,10 +20,14 @@
         <a class="nav-link" href="<?php echo site_url('tags'); ?>">Tags</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('posting/new_post'); ?>">New Post</a>
+        <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
+        <?php
+          if ($this->session->userdata('logged_in')) {
+            echo "<a class='nav-link' href='" . site_url('posting/new_post'). "'>New Post</a>";
+          }
+        ?>
       </li>
       <li class="nav-item">
         <?php
