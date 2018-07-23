@@ -34,7 +34,8 @@ class Signup extends CI_Controller {
     public function add_user() {
         $new_user_data = $this->input->post();
         $this->check_input($new_user_data);
-        // $this->User_model->add_user($new_user_data);
-        // redirect(site_url('login'), 'refresh');
+        $this->User_model->add_user($new_user_data);
+        redirect(site_url('login'), 'refresh');
     }
+    
 }
