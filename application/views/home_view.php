@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+if (!empty($logged_in_msg)) {
+    echo "<span style='color:red;'>".$logged_in_msg."</span>";
+}
+
 echo <<<EOD
 <div class="container">
     <h1>LATEST POSTS</h1>
