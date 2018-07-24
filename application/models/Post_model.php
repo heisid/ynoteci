@@ -12,8 +12,9 @@ class Post_model extends CI_Model {
         $query = $this->db->get('posts');
         $result = $query->result_array();
 
-        // Motong sampe 500 karakter
-        // TODO: diganti pake helper text dari CI
+        // Cropping post showcase in front page to 500 character,
+        // Excluding html tags
+        // TODO: Replace it with CodeIgniter built-in helper, if any
         foreach ($result as &$post) {
             $content_no_html = strip_tags($post['content']);
             $content_crop = substr($content_no_html, 0, 500);
@@ -22,7 +23,8 @@ class Post_model extends CI_Model {
             }
             $post['content'] = $content_crop;
         }
-        // mengantisipasi kalau2 $post dipake lagi nanti
+        // Anticipating if there's another variable having the same name
+        // and somehow connected. Foreach above &$post passed by reference.
         unset($post);
 
         return $result;
