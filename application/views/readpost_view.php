@@ -27,7 +27,8 @@ if (!empty($full_post['date_modified'])) {
 
     $edit_post_link = site_url('posting/edit_post');
     $delete_post_link = site_url('delete');
-    if ($this->session->userdata('logged_in')) {
+    // print_r($modify_permission);
+    if ($modify_permission) {
         echo <<<EOD
         <a href="{$edit_post_link}/{$full_post['id_post']}" class="btn btn-primary">Edit</a>
         <form class="form-delete" action="{$delete_post_link}" method="post">
