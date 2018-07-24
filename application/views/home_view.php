@@ -9,6 +9,7 @@ if (!empty($logged_in_msg)) {
 <div class="container">
     <h1>LATEST POSTS</h1>
     <?php
+    $read_url = site_url('read_post');
     foreach ($recent_post as $post) {
         echo <<<EOD
         <div class="row post-showcase">
@@ -16,7 +17,7 @@ if (!empty($logged_in_msg)) {
                 <h3>{$post['title_post']}</h3>
                 <p><em>{$post['date_post']}</em><p>
                 <p>{$post['content']}</p>
-                <a href="index.php/read_post/{$post['id_post']}" class="btn btn-primary">Read More</a>
+                <a href="{$read_url}/{$post['id_post']}" class="btn btn-primary">Read More</a>
             </div>
         </div>
 EOD;
