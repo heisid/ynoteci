@@ -123,13 +123,14 @@ class Post_model extends CI_Model {
 
     public function post_permission($id_post) {
         $current_user = $this->session->userdata('username');
+        $current_user_role = $this->User_model->get_user_role($current_user);
         $is_logged_in = $this->session->userdata('logged_in');
 
         $this->db->select('author')
                  ->where('id_post', $id_post);
         $query = $this->db->get('posts');
         $author = $query->row()->author;
-        if ($is_logged_in && ($current_user == $author) || ($current_user == 'admin')) {
+        if ($is_logged_in && ($current_user == $author) || ($current_user_role == 'admin')) {
             return TRUE;
         } else {
             return FALSE;
