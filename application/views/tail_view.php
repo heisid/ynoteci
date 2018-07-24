@@ -1,6 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<!-- div container closing, look at header.php -->
 </div>
 
 <div class="footer">

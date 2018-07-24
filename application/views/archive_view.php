@@ -1,8 +1,9 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-echo "<div class='container'>";
-echo "<h2>Archive</h2>";
+<div class="container">
+<h2>Archive</h2>
 
+<?php
 foreach ($list_all_posts as $post) {
     echo <<<EOD
     <div class="row">
@@ -15,5 +16,5 @@ foreach ($list_all_posts as $post) {
     </div>
 EOD;
 }
-
-echo "</div?";
+?>
+</div>

@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="<?php echo base_url(); ?>">Y-NOTE?</a>
+  <a class="navbar-brand" href="<?php echo site_url(); ?>">Y-NOTE?</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,24 +9,44 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url(); ?>">Home
+        <a class="nav-link" href="<?php echo site_url(); ?>">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>index.php/archive">Archive</a>
+        <a class="nav-link" href="<?php echo site_url('archive'); ?>">Archive</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>index.php/tags">Tags</a>
+        <a class="nav-link" href="<?php echo site_url('tags'); ?>">Tags</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>index.php/posting/new_post">New Post</a>
+        <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>index.php/about">About</a>
+        <?php
+        if ($this->session->userdata('logged_in')) {
+          echo "<a class='nav-link' href='" . site_url('posting/new_post'). "'>New Post</a>";
+        }
+        ?>
+      </li>
+      <li class="nav-item">
+        <?php
+        if ($this->session->userdata('logged_in')) {
+          echo "<span class='navbar-text'>(". $this->session->userdata('username') .")</span>";
+        }
+        ?>
+      </li>
+      <li class="nav-item">
+        <?php
+        if ($this->session->userdata('logged_in')) {
+          echo "<a class='nav-link' href='" . site_url('logout') . "'>Logout</a>";
+        } else {
+          echo "<a class='nav-link' href='" . site_url('login') . "'>Login</a>";
+        }
+        ?>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" action="<?php echo base_url(); ?>index.php/search" method="get">
+    <form class="form-inline mt-2 mt-md-0" action="<?php echo site_url('search'); ?>" method="get">
       <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
