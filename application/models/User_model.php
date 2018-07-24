@@ -57,7 +57,6 @@ class User_model extends CI_Model {
     }
 
     public function get_user_role($username) {
-        
         if (empty($username)) {
             return '';
         }
@@ -67,6 +66,12 @@ class User_model extends CI_Model {
         $query = $this->db->get('users');
         $result = $query->row();
         return $result->user_role;
+    }
+
+    public function get_list_all_users() {
+        $this->db->select('username');
+        $query = $this->db->get('users');
+        return $query->result_array();
     }
 
 }

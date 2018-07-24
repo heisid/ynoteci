@@ -139,4 +139,11 @@ class Post_model extends CI_Model {
         }
     }
 
+    public function posts_by_author($author) {
+        $this->db->select('id_post, title_post')
+                 ->where('author', $author);
+        $query = $this->db->get('posts');
+        return $query->result_array();
+    }
+
 }

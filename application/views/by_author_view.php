@@ -4,7 +4,7 @@ $read_post_url = site_url('read_post');
 ?>
 
 <div class='container'>
-    <h2>Posts Under Tag: <em><?php echo $tag; ?></em></h2>
+    <h2>Posts By: <em><?php echo $author; ?></em></h2>
     <ul>
 
     <?php
