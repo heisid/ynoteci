@@ -123,7 +123,22 @@ class Post_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function post_permission($id_post) {
+    public function edit_permission($id_post) {
+        $current_user = $this->session->userdata('username');
+        $is_logged_in = $this->session->userdata('logged_in');
+
+        $this->db->select('author')
+                 ->where('id_post', $id_post);
+        $query = $this->db->get('posts');
+        $author = $query->row()->author;
+        if ($is_logged_in && $current_user == $author) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function delete_permission($id_post) {
         $current_user = $this->session->userdata('username');
         $current_user_role = $this->User_model->get_user_role($current_user);
         $is_logged_in = $this->session->userdata('logged_in');

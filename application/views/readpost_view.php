@@ -26,13 +26,16 @@ if (!empty($full_post['date_modified'])) {
 <?php 
     echo $full_post['content'];
 
-    $edit_post_link = site_url('posting/edit_post');
-    $delete_post_link = site_url('delete');
-    // print_r($modify_permission);
-    if ($modify_permission) {
+    $edit_post_url = site_url('posting/edit_post/').$full_post['id_post'];
+    $delete_post_url = site_url('delete');
+    
+    if ($permission['edit_perm']) {
+        echo "<a href='$edit_post_url' class='btn btn-primary'>Edit</a>";
+    }
+
+    if ($permission['delete_perm']) {
         echo <<<EOD
-        <a href="{$edit_post_link}/{$full_post['id_post']}" class="btn btn-primary">Edit</a>
-        <form class="form-delete" action="{$delete_post_link}" method="post">
+        <form class="form-delete" action="{$delete_post_url}" method="post">
             <button id="delete" class="btn btn-danger" type="submit" name="id_post" value="{$full_post['id_post']}">Delete</button>
         </form>
 

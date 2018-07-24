@@ -19,7 +19,7 @@ class Posting extends CI_Controller {
     public function edit_post($id_post) {
         $post = $this->Post_model;
 
-        if (!$post->post_permission($id_post)) {
+        if (!$post->edit_permission($id_post)) {
             $read_link = 'read_post/'.$id_post;
             $this->session->set_flashdata('permission', 'You are not allowed to edit this post');
             redirect(site_url($read_link));
