@@ -56,10 +56,14 @@ class User_model extends CI_Model {
         return $query->result_array();
     }
 
-    // IT DOES NOT WORK.
     public function get_user_role($username) {
+        
+        if (empty($username)) {
+            return '';
+        }
+
         $this->db->select('user_role')
-                 ->where('username', $username);
+                ->where('username', $username);
         $query = $this->db->get('users');
         $result = $query->row();
         return $result->user_role;
