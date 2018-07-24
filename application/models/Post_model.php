@@ -70,10 +70,10 @@ class Post_model extends CI_Model {
     }
 
     public function save_post($post_data) {
-        $this->db->set('title_post', $post_data['title_post']);
-        $this->db->set('content', $post_data['content']);
-        $this->db->set('date_post', 'NOW()', FALSE);
-
+        $this->db->set('title_post', $post_data['title_post'])
+                 ->set('author', $post_data['author'])
+                 ->set('content', $post_data['content'])
+                 ->set('date_post', 'NOW()', FALSE);
         $this->db->insert('posts');
         // last autoincrement integer
         $id_post = $this->db->insert_id();
@@ -84,9 +84,9 @@ class Post_model extends CI_Model {
     public function update_post($post_data) {
         $this->delete_tags($post_data['id_post']);
     
-        $this->db->set('title_post', $post_data['title_post']);
-        $this->db->set('content', $post_data['content']);
-        $this->db->set('date_modified', 'NOW()', FALSE);
+        $this->db->set('title_post', $post_data['title_post'])
+                 ->set('content', $post_data['content'])
+                 ->set('date_modified', 'NOW()', FALSE);
         $this->db->where('id_post', $post_data['id_post']);
         $this->db->update('posts');
         

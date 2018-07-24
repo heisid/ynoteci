@@ -5,6 +5,7 @@ echo "<span style='color:red;'>".$permission_msg."</span>";
 
 <h1><?php echo $full_post['title_post']; ?></h1>
 <p><em><?php echo $full_post['date_post']; ?></em></p>
+<p><em>By <?php echo $full_post['author']; ?></em></p>
 
 <?php
 if (!empty($full_post['date_modified'])) {

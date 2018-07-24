@@ -4,6 +4,7 @@
 
 <h3>New Post</h3>
 <form action="save_post" method="post">
+    <input type="hidden" name="author" value="<?php echo $this->session->userdata('username'); ?>">
     <div class="form-group">
         <label for="post-title">Title</label>
         <input name="title_post" class="form-control form-control-lg" id="post-title" type="text">
