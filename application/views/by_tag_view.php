@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <div class='container'>
-    <h2>Posts Under Tag: <em>$tag</em></h2>
+    <h2>Posts Under Tag: <em><?php echo $tag; ?></em></h2>
     <ul>
 
     <?php
