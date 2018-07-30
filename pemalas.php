@@ -34,7 +34,7 @@ EOD;
         $this->con->query("DELETE FROM posts");
         $this->con->query("DELETE FROM tags");
         if ($tabel_users) {
-            $this->con->query($this->con, "DELETE FROM users WHERE user <> 'admin'");
+            $this->con->query($this->con, "DELETE FROM users WHERE user_role <> 'admin'");
         }
         $this->con->close();
     }
@@ -58,7 +58,7 @@ EOD;
 }
 
 $bangke = new Pemalas;
-// $bangke->membantai();
+$bangke->membantai();
 $bangke->mengisi_kehampaan();
 
 ?>
