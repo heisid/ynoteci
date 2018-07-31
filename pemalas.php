@@ -58,7 +58,7 @@ EOD;
 }
 
 $bangke = new Pemalas;
-$bangke->membantai();
+// $bangke->membantai();
 $bangke->mengisi_kehampaan();
 
 ?>
