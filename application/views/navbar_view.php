@@ -32,7 +32,8 @@
       <li class="nav-item">
         <?php
         if ($this->session->userdata('logged_in')) {
-          echo "<span class='navbar-text'>(". $this->session->userdata('username') .")</span>";
+          $username = $this->session->userdata('username');
+          echo "<a class='nav-link' href='" . site_url('profile') .  "'>" . $username . "</a>";
         }
         ?>
       </li>

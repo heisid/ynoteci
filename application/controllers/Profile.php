@@ -2,17 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Profile extends CI_Controller {
-    public function _remap($method, $args) {
-        if (method_exists($this, $method)) {
-            $this->$method($args);
-        } else {
-            $this->index($method, $args);
-        }
-    }
 
-    public function index($username) {
+    public function index() {
+        if(empty($this->session->userdata('logged_in'))) {
+            redirect(site_url());
+        }
+
         $user_detail = $this->User_model->get_user_detail();
-        $user_role = $this->User_model->get_user_role();
+        $username = $this->session->userdata('username');
+        $user_role = $this->User_model->get_user_role($username);
         $posts_list = $this->Post_model->posts_by_author($username);
 
         $user_data = array(
