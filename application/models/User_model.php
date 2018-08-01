@@ -53,7 +53,7 @@ class User_model extends CI_Model {
             $query = $this->db->get('users');
         }
 
-        return $query->result_array();
+        return $query->row_array();
     }
 
     public function get_user_role($username) {

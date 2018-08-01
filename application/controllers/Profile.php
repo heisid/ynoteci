@@ -8,16 +8,11 @@ class Profile extends CI_Controller {
             redirect(site_url());
         }
 
-        $user_detail = $this->User_model->get_user_detail();
+        $user_data = $this->User_model->get_user_detail();
         $username = $this->session->userdata('username');
-        $user_role = $this->User_model->get_user_role($username);
         $posts_list = $this->Post_model->posts_by_author($username);
 
-        $user_data = array(
-                     'user_detail' => $user_detail,
-                     'user_role' => $user_role,
-                     'posts_list' => $posts_list
-        );
+        $user_data['posts_list'] = $posts_list;
 
         $this->load->view('header_view', array('page_title' => 'Profile'));
         $this->load->view('navbar_view');
