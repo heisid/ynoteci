@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <div class='container'>
-    <h2>Search result for: <em>$search_string</em></h2>
+    <h2>Search result for: <em><?php echo $search_string; ?></em></h2>
     <ul>
     <?php
     foreach ($list_posts as $post) {
