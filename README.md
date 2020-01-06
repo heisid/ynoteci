@@ -5,5 +5,3 @@ I made this stupid wannabe blog platform I call YNOTE. Written in PHP on top of 
 - CRUD (editing uses CKeditor)
 - Tagging
 - Searching
-
-How it looks like: http://sid.rf.gd/ynote/
